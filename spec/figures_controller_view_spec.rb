@@ -48,7 +48,7 @@ describe FiguresController do
     expect(figure.landmarks).to include(Landmark.first)
   end
 
-   it "allows you to create a new figure with a new title" do
+  it "allows you to create a new figure with a new title" do
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
     fill_in :new_title, :with => "Time Lord"
