@@ -1,7 +1,11 @@
+<h1>Edit Your Figures</h1>
 
-<h1>Create a New Figure</h1>
-<form method="POST" action="/figures">
-<label><strong>Name</strong></label><input type="text" name="figure[name]" id="figure_name"><br><br>
+<form method="POST" action="/figures/<%= @figure.id %>">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+<label><strong>Name:</strong></label><input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>">
+<br>
+<br>
 <label><strong>Titles</strong></label><br>
 
 <% @titles.each do |title| %>
@@ -32,6 +36,9 @@
 <input type="text" name="landmark[name]" id="new_landmark">
 <br>
 <br>
-<input type="submit" value="Create New Figure">
+<input type="submit" value="Edit Figure">
+
+
+
 
 </form>
